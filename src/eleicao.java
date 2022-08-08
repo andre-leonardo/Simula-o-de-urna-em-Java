@@ -36,6 +36,44 @@ public class eleicao extends javax.swing.JFrame {
     int votoNulo = 0;
     int votoBranco = 0;
     
+    public void checkClicks() {
+        String texto = botaoRecebedor.getText();
+        int numero = Integer.parseInt(texto);
+        if(numero == 17){
+            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
+            jLabel5.setVisible(true);
+            nomeCandidatos.setText("");
+            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
+            nomeCandidatos.setVisible(true);
+        }
+
+        else if(numero == 69){
+            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
+            jLabel5.setVisible(true);
+            nomeCandidatos.setText("");
+            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
+            nomeCandidatos.setVisible(true);
+        }
+        else if(numero == 95){
+            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
+            jLabel5.setVisible(true);
+            nomeCandidatos.setText("");
+            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
+            nomeCandidatos.setVisible(true);
+        }
+        else if(numero == 32){
+            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
+            jLabel5.setVisible(true);
+            nomeCandidatos.setText("");
+            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseus");
+            nomeCandidatos.setVisible(true);
+        }
+        else{
+            jLabel5.setVisible(false);
+            nomeCandidatos.setVisible(false);
+        }
+    }
+    
 
     /* This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,7 +122,7 @@ public class eleicao extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(51, 0, 255));
         jLabel4.setFont(new java.awt.Font("Lato Semibold", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel4.setText("NÚMERO DO CANDIDATO");
+        jLabel4.setText("Candidate number");
         jLabel4.setToolTipText("");
 
         botaoRecebedor.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
@@ -97,7 +135,7 @@ public class eleicao extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("VOTAÇÃO PARA PERSONAGEM DE MITO GREGO FAVORITO");
+        jLabel1.setText("BEST GREEK MYTHOLOGY CHARACTER");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -106,7 +144,7 @@ public class eleicao extends javax.swing.JFrame {
         corrige.setBackground(new java.awt.Color(255, 0, 51));
         corrige.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         corrige.setForeground(new java.awt.Color(0, 0, 0));
-        corrige.setText("CORRIGE");
+        corrige.setText("CORRECT");
         corrige.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 corrigeActionPerformed(evt);
@@ -116,7 +154,7 @@ public class eleicao extends javax.swing.JFrame {
         confirma.setBackground(new java.awt.Color(0, 255, 0));
         confirma.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         confirma.setForeground(new java.awt.Color(0, 0, 0));
-        confirma.setText("CONFIRMA");
+        confirma.setText("CONFIRM");
         confirma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmaActionPerformed(evt);
@@ -126,7 +164,7 @@ public class eleicao extends javax.swing.JFrame {
         branco.setBackground(new java.awt.Color(255, 255, 255));
         branco.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         branco.setForeground(new java.awt.Color(0, 0, 0));
-        branco.setText("BRANCO");
+        branco.setText("WHITE");
         branco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brancoActionPerformed(evt);
@@ -231,7 +269,7 @@ public class eleicao extends javax.swing.JFrame {
 
         jTextFieldPedro.setText("0");
 
-        resultado.setText("RESULTADO");
+        resultado.setText("RESULT");
         resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resultadoActionPerformed(evt);
@@ -240,7 +278,7 @@ public class eleicao extends javax.swing.JFrame {
 
         jTextFieldNulo.setText("0");
 
-        jButton1.setText("ENTRAR");
+        jButton1.setText("ENTER");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -255,7 +293,7 @@ public class eleicao extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel2.setText("SENHA DO ADMINISTRADOR (123)");
+        jLabel2.setText("ADMIN PASSWORD (123)");
 
         jTextFieldBranco.setText("0");
 
@@ -263,7 +301,7 @@ public class eleicao extends javax.swing.JFrame {
         nomeCandidatos.setFont(new java.awt.Font("Dialog", 2, 24)); // NOI18N
         nomeCandidatos.setForeground(new java.awt.Color(255, 0, 51));
 
-        jButton2.setText("Número dos candidatos");
+        jButton2.setText("Candidate number list");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -301,17 +339,12 @@ public class eleicao extends javax.swing.JFrame {
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(botao8, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(botao9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(botaoRecebedor, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(45, 45, 45))
+                                                .addComponent(botao9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(botaoRecebedor, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(198, 198, 198)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nomeCandidatos, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -434,7 +467,7 @@ public class eleicao extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        mensagem.showMessageDialog(null, "Ulisses - 17\nPerseu - 32\nHércules - 69\nAtlas - 95.", "CANDIDATOS", 1);
+        mensagem.showMessageDialog(null, "Ulisses - 17\nPerseu - 32\nHercules - 69\nAtlas - 95.", "CANDIDATES", 1);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -459,7 +492,7 @@ public class eleicao extends javax.swing.JFrame {
             this.setVisible(false);
         }
         else{
-            mensagem.showMessageDialog(null, "Senha incorreta.", "Senha incorreta", 1);
+            mensagem.showMessageDialog(null, "Incorrect Password.", "Incorrect Password", 1);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -473,406 +506,66 @@ public class eleicao extends javax.swing.JFrame {
     private void botao0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao0ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "0");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao0ActionPerformed
 
     private void botao7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao7ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "7");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao7ActionPerformed
 
     private void botao4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao4ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "4");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao4ActionPerformed
 
     private void botao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao3ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "3");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao3ActionPerformed
 
     private void botao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao2ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "2");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao2ActionPerformed
 
     private void botao6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao6ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "6");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao6ActionPerformed
 
     private void botao5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao5ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "5");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao5ActionPerformed
 
     private void botao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao1ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "1");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao1ActionPerformed
 
     private void botao8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao8ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "8");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao8ActionPerformed
 
     private void botao9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao9ActionPerformed
         // TODO add your handling code here:
         botaoRecebedor.setText(botaoRecebedor.getText() + "9");
-        String texto = botaoRecebedor.getText();
-        int numero = Integer.parseInt(texto);
-        if(numero == 17){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/ulisses.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Ulisses");
-            nomeCandidatos.setVisible(true);
-        }
-
-        else if(numero == 69){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/hercules.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Hercules");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 95){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/atlas.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Atlas");
-            nomeCandidatos.setVisible(true);
-        }
-        else if(numero == 32){
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/img/perseu.jpg")));
-            jLabel5.setVisible(true);
-            nomeCandidatos.setText("");
-            nomeCandidatos.setText(nomeCandidatos.getText() + "Perseu");
-            nomeCandidatos.setVisible(true);
-        }
-        else{
-            jLabel5.setVisible(false);
-            nomeCandidatos.setVisible(false);
-        }
+        checkClicks();
     }//GEN-LAST:event_botao9ActionPerformed
 
     private void brancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brancoActionPerformed
         // TODO add your handling code here:
-        mensagem.showMessageDialog(null, "VOCÊ VOTOU EM BRANCO.", "VOTO CONFIRMADO", 1);
+        mensagem.showMessageDialog(null, "YOU VOTED WHITE.", "VOTE CONFIRMED", 1);
         votoBranco = (Integer.parseInt(jTextFieldBranco.getText()))+1;
         jTextFieldBranco.setText(Integer.toString(votoBranco));
     }//GEN-LAST:event_brancoActionPerformed
@@ -883,27 +576,27 @@ public class eleicao extends javax.swing.JFrame {
         int numero = Integer.parseInt(texto);
         switch (numero) {
             case 17 -> {
-                mensagem.showMessageDialog(null, "Você votou em Ulisses.", "VOTO CONFIRMADO", 1);
+                mensagem.showMessageDialog(null, "You voted in Ulisses.", "VOTE CONFIRMED", 1);
                 votoMaya = (Integer.parseInt(jTextFieldMaya.getText()))+1;
                 jTextFieldMaya.setText(Integer.toString(votoMaya));
             }
             case 69 -> {
-                mensagem.showMessageDialog(null, "Você votou em Hércules.", "VOTO CONFIRMADO", 1);
+                mensagem.showMessageDialog(null, "You voted in Hercules.", "VOTE CONFIRMED", 1);
                 votoMark = (Integer.parseInt(jTextFieldMark.getText()))+1;
                 jTextFieldMark.setText(Integer.toString(votoMark));
             }
             case 95 -> {
-                mensagem.showMessageDialog(null, "Você votou em Atlas.", "VOTO CONFIRMADO", 1);
+                mensagem.showMessageDialog(null, "You voted in Atlas.", "VOTE CONFIRMED", 1);
                 votoSerj = (Integer.parseInt(jTextFieldSerj.getText()))+1;
                 jTextFieldSerj.setText(Integer.toString(votoSerj));
             }
             case 32 -> {
-                mensagem.showMessageDialog(null, "Você votou em Perseu.", "VOTO CONFIRMADO", 1);
+                mensagem.showMessageDialog(null, "You voted in Perseus.", "VOTE CONFIRMED", 1);
                 votoPedro = (Integer.parseInt(jTextFieldPedro.getText()))+1;
                 jTextFieldPedro.setText(Integer.toString(votoPedro));
             }
             default -> {
-                mensagem.showMessageDialog(null, "VOCÊ VOTOU NULO.", "VOTO CONFIRMADO", 1);
+                mensagem.showMessageDialog(null, "YOU VOTED NULL.", "VOTE CONFIRMED", 1);
                 votoNulo = (Integer.parseInt(jTextFieldNulo.getText()))+1;
                 jTextFieldNulo.setText(Integer.toString(votoNulo));
             }
@@ -979,7 +672,7 @@ public class eleicao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private static javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JTextField jTextField1;
     public static javax.swing.JTextField jTextFieldBranco;
@@ -989,7 +682,7 @@ public class eleicao extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextFieldPedro;
     public static javax.swing.JTextField jTextFieldSerj;
     private javax.swing.JOptionPane mensagem;
-    private javax.swing.JLabel nomeCandidatos;
+    private static javax.swing.JLabel nomeCandidatos;
     public static javax.swing.JButton resultado;
     // End of variables declaration//GEN-END:variables
 }

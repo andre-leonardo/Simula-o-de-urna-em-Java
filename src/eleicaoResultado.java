@@ -59,7 +59,7 @@ public class eleicaoResultado extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("RESULTADOS DA ELEIÇÃO");
+        jLabel1.setText("ELECTION RESULT");
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
@@ -107,11 +107,11 @@ public class eleicaoResultado extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("Votos em branco->");
+        jLabel2.setText("White votes ->");
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 0, 51));
-        jButton1.setText("REINICIAR");
+        jButton1.setText("RESTART");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -120,7 +120,7 @@ public class eleicaoResultado extends javax.swing.JFrame {
 
         vencedor.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         vencedor.setForeground(new java.awt.Color(255, 0, 51));
-        vencedor.setText("GANHADOR");
+        vencedor.setText("WINNER");
         vencedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vencedorActionPerformed(evt);
@@ -129,7 +129,7 @@ public class eleicaoResultado extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setText("Votos nulos     ->");
+        jLabel3.setText("Null votes     ->");
 
         nuloCentagem.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         nuloCentagem.setText("0");
@@ -181,16 +181,16 @@ public class eleicaoResultado extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(brancoCentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(nuloCentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(97, 97, 97)
+                        .addGap(90, 90, 90)
                         .addComponent(jOptionPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
@@ -289,22 +289,22 @@ public class eleicaoResultado extends javax.swing.JFrame {
         int total = mayaInt+serjInt+pedroInt+markInt;
         
         if(mayaInt>serjInt && mayaInt>markInt && mayaInt>pedroInt){
-            jOptionPane1.showMessageDialog(null, "ULISSES VENCEU.", "VENCEDOR!", 1);
+            jOptionPane1.showMessageDialog(null, "ULISSES WON.", "WINNER!", 1);
         }
         else if(serjInt>mayaInt && serjInt>markInt && serjInt>pedroInt){
-            jOptionPane1.showMessageDialog(null, "ATLAS VENCEU.", "VENCEDOR!", 1);
+            jOptionPane1.showMessageDialog(null, "ATLAS WON.", "WINNER!", 1);
         }
         else if(markInt>mayaInt && markInt>serjInt && markInt>pedroInt){
-            jOptionPane1.showMessageDialog(null, "HÉRCULES VENCEU.", "VENCEDOR!", 1);
+            jOptionPane1.showMessageDialog(null, "HÉRCULES WON.", "WINNER!", 1);
         }
         else if(pedroInt>mayaInt && pedroInt>serjInt && pedroInt>markInt){
-            jOptionPane1.showMessageDialog(null, "PERSEU VENCEU.", "VENCEDOR!", 1);
+            jOptionPane1.showMessageDialog(null, "PERSEUS WON.", "WINNER!", 1);
         }
         else if(total==0){
             jOptionPane1.showMessageDialog(null, "Nenhum candidato recebeu votos.", "Ninguém", 1);
         }
         else if(serjInt==mayaInt || markInt==mayaInt || mayaInt==pedroInt || markInt==pedroInt || markInt==serjInt || serjInt==pedroInt ){
-            jOptionPane1.showMessageDialog(null, "EMPATE", "Empate", 1);
+            jOptionPane1.showMessageDialog(null, "DRAW", "Draw", 1);
         }
    
     }//GEN-LAST:event_vencedorActionPerformed
